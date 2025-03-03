@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nginx:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - "./conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro"
+      - "./lua:/usr/local/openresty/nginx/lua"
+    ports:
+      - "8080:8080"
