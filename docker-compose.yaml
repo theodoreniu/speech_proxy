@@ -8,4 +8,4 @@ services:
       - "./conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro"
       - "./lua:/usr/local/openresty/nginx/lua"
     ports:
-      - "8080:8080"
+      - "4433:80"

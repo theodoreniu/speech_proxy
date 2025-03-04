@@ -14,6 +14,6 @@ COPY lua /usr/local/openresty/nginx/lua/
 # Create necessary directories
 RUN mkdir -p /usr/local/openresty/lualib/resty
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
