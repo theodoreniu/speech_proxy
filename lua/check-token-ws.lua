@@ -23,7 +23,7 @@ local httpc = http.new()
 
 httpc:set_timeouts(10000, 10000, 10000)  -- connect, send, read
 
-local res, err = httpc:request_uri("https://realip.cc/", {
+local res, err = httpc:request_uri("https://api.github.com/repos/theodoreniu/speech_proxy", {
     method = "GET",
     query = {
         token = token
@@ -31,7 +31,7 @@ local res, err = httpc:request_uri("https://realip.cc/", {
     ssl_verify = false  -- for dev
 })
 
-if res then
+if res and res.status == 200 then
     local ip_info = cjson.decode(res.body)
     ngx.log(ngx.INFO, "IP Info: ", cjson.encode(ip_info))
 else
