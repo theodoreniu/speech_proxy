@@ -33,9 +33,9 @@ local res, err = httpc:request_uri("https://api.github.com/repos/theodoreniu/spe
 
 if res and res.status == 200 then
     local ip_info = cjson.decode(res.body)
-    ngx.log(ngx.INFO, "IP Info: ", cjson.encode(ip_info))
+    ngx.log(ngx.INFO, "Info: ", cjson.encode(ip_info))
 else
-    ngx.log(ngx.ERR, "Failed to request IP info: ", err)
+    ngx.log(ngx.ERR, "Failed to request info: ", err)
 end
 
 httpc:close()
